@@ -1,28 +1,25 @@
-// input km ed età
-let kilometri = parseInt(prompt('Inserisci il numero di kilometri')); //number
-let età = parseInt(prompt('Inserisci l\'età del passeggero')); //number
+// input km ed age
+let km = parseInt(prompt('Inserisci il numero di km'));
+let age = parseInt(prompt('Inserisci l\'age del passeggero'));
 
 // check dati inseriti
-if (/^([1-9]\d*)$/.test(kilometri) && /^([1-9]\d*)$/.test(età))  {
-    console.log('La lunghezza del viaggio è di ' + kilometri + ' kilometri');
+if (/^([1-9]\d*)$/.test(km) && /^([1-9]\d*)$/.test(age))  {
+    console.log('La lunghezza del viaggio è di ' + km + ' km');
     // calcolo costo base
-    let costoAlKilometro = 0.21; //number
-    let costo = costoAlKilometro * kilometri; //number
+    let costoAlKilometro = 0.21;
+    let costo = costoAlKilometro * km;
 
     // calcolo sconto
-    if (età < 18) {
-        costo = costo * 0.8; //number
+    if (age < 18) {
+        costo = costo * 0.8;
         console.log('Lo sconto è pari al 20% del prezzo totale'); 
-    } else if (età > 64) { 
-        costo = costo * 0.6; //number
+    } else if (age > 64) { 
+        costo = costo * 0.6;
         console.log('Lo sconto è pari al 40% del prezzo totale'); 
     }
 
-    // formattazione prezzo
-    costo = Math.round(costo * 100) / 100; //number
-
     // stampa prezzo
-    console.log('Il costo del biglietto è di ' + costo + ' eur'); 
+    console.log('Il costo del biglietto è di ' + costo.toFixed(2) + ' eur'); 
 } else {
     console.log('Formato dati non valido');
 }
